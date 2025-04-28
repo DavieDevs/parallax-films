@@ -1,5 +1,6 @@
 import Navigation from "../app/components/Navigation";
 import Header from "../app/components/Header";
+import Intro from "./components/Intro";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
         <Navigation />
         <Header />
       </div>
+      <Intro />
     </>
   );
 }
