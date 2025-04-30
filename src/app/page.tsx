@@ -1,6 +1,7 @@
 import Navigation from "../app/components/Navigation";
 import Header from "../app/components/Header";
 import Intro from "./components/Intro";
+import BrandedSpacer from "./components/BrandedSpacer";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <Header />
       </div>
       <Intro />
+      <BrandedSpacer />
     </>
   );
 }

@@ -15,7 +15,7 @@ export default function Header() {
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
         <Image
           src="/Print_Primary_Lace.png"
-          alt="Centered Image"
+          alt="Parallax Films Logo"
           width={500}
           height={500}
           className=""
