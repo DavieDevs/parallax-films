@@ -2,6 +2,7 @@ import Navigation from "../app/components/Navigation";
 import Header from "../app/components/Header";
 import Intro from "./components/Intro";
 import BrandedSpacer from "./components/BrandedSpacer";
+import FeatureFilmSection from "./components/FeatureFilmSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       </div>
       <Intro />
       <BrandedSpacer />
+      <FeatureFilmSection />
     </div>
   );
 }

@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         mosswood: "#4b4631",
+        sand: "#E5D6C1",
         primary: "#4b4631",
         secondary: "#8a7c4a",
         accent: "#c9b96e",
