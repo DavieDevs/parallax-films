@@ -13,7 +13,9 @@ export default function FeatureFilmSection() {
         <Film videoId="1019498597" />
         <Film videoId="1004931664" />
       </div>
-      <Button />
+      <div className="p-4">
+        <Button>View More</Button>
+      </div>
     </div>
   );
 }
