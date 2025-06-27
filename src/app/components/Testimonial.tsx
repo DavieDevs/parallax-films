@@ -34,7 +34,7 @@ export default function Testimonial() {
 
   const [, currentTestimonial] = testimonialEntries[index];
 
-  const WORD_LIMIT = 30;
+  const WORD_LIMIT = 40;
   const words = currentTestimonial.review.split(" ");
   const shouldTruncate = words.length > WORD_LIMIT;
   const truncatedText = words.slice(0, WORD_LIMIT).join(" ") + "...";
