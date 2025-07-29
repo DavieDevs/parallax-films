@@ -13,13 +13,18 @@ export default function Inquiry() {
     visionStyle: "",
     visionHours: "",
     budget: "",
+    budgetFlexibility: "",
     addons: [] as string[],
     message: "",
   });
 
-  const handleChange = (
+  const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -27,7 +32,6 @@ export default function Inquiry() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Submitted data:", formData);
-    // You can send data to your backend or Supabase/Appwrite here
   };
 
   const nextStep = () => setStep((prev) => Math.min(prev + 1, 4));
@@ -41,16 +45,16 @@ export default function Inquiry() {
   };
 
   return (
-    <div className="bg-lace w-full rounded-lg flex flex-col items-center p-8">
+    <div className="bg-lace w-full rounded-lg flex flex-col items-center p-8 max-w-xl mx-auto shadow-lg">
       <h1 className="text-2xl mb-4">{stepTitles[step]}</h1>
 
       <form
-        className="w-full max-w-md flex flex-col items-center"
+        className="w-full max-w-md flex flex-col items-center min-h-[500px]"
         onSubmit={handleSubmit}
       >
         {/* Step 1: Basic Info */}
         {step === 1 && (
-          <>
+          <div className="flex-1 w-full flex flex-col items-center">
             <h3 className="text-sm text-center mb-4">
               Enter your basic information
             </h3>
@@ -61,7 +65,7 @@ export default function Inquiry() {
                 type="text"
                 name="name"
                 value={formData.name}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 placeholder="Enter your name"
                 className="border border-gray-300 rounded p-2 w-full"
               />
@@ -73,7 +77,7 @@ export default function Inquiry() {
                 type="email"
                 name="email"
                 value={formData.email}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 placeholder="Enter your email"
                 className="border border-gray-300 rounded p-2 w-full"
               />
@@ -85,7 +89,7 @@ export default function Inquiry() {
                 type="date"
                 name="weddingDate"
                 value={formData.weddingDate}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 className="border border-gray-300 rounded p-2 w-full"
               />
             </div>
@@ -96,17 +100,17 @@ export default function Inquiry() {
                 type="text"
                 name="venue"
                 value={formData.venue}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 placeholder="Enter your venue"
                 className="border border-gray-300 rounded p-2 w-full"
               />
             </div>
-          </>
+          </div>
         )}
 
         {/* Step 2: Vision */}
         {step === 2 && (
-          <>
+          <div className="flex-1 w-full flex flex-col items-center">
             <h3 className="text-sm text-center mb-4">
               Tell me about your vision
             </h3>
@@ -117,7 +121,7 @@ export default function Inquiry() {
                 type="text"
                 name="visionCoverage"
                 value={formData.visionCoverage}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 placeholder="Full day, Ceremony only, etc"
                 className="border border-gray-300 rounded p-2 w-full"
               />
@@ -129,7 +133,7 @@ export default function Inquiry() {
                 type="text"
                 name="visionStyle"
                 value={formData.visionStyle}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 placeholder="Cinematic, documentary, etc."
                 className="border border-gray-300 rounded p-2 w-full"
               />
@@ -141,35 +145,52 @@ export default function Inquiry() {
                 type="text"
                 name="visionHours"
                 value={formData.visionHours}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 placeholder="8 hours, 10 hours, more"
                 className="border border-gray-300 rounded p-2 w-full"
               />
             </div>
-          </>
+          </div>
         )}
 
         {/* Step 3: Budget */}
         {step === 3 && (
-          <>
+          <div className="flex-1 w-full flex flex-col items-center">
             <h3 className="text-sm text-center mb-4">What is your budget?</h3>
 
             <div className="w-full p-2">
+              <label>Budget Range</label>
               <input
                 type="text"
                 name="budget"
                 value={formData.budget}
-                onChange={handleChange}
+                onChange={handleInputChange}
                 placeholder="Enter your budget range"
                 className="border border-gray-300 rounded p-2 w-full"
               />
             </div>
-          </>
+
+            <div className="w-full p-2">
+              <label htmlFor="">Is your budget flexible? </label>
+              <select
+                name="budgetFlexibility"
+                value={formData.budgetFlexibility}
+                onChange={handleSelectChange}
+                className="border border-gray-300 rounded p-2 w-full"
+              >
+                <option value="yes">
+                  Yes, I can be flexible for the right fit
+                </option>
+                <option value="no">I have a firm budget</option>
+                <option value="maybe">I’m not sure yet</option>
+              </select>
+            </div>
+          </div>
         )}
 
         {/* Step 4: Add-ons */}
         {step === 4 && (
-          <>
+          <div className="flex-1 w-full flex flex-col items-center">
             <h3 className="text-sm text-center mb-4">
               Would you like any add-ons?
             </h3>
@@ -197,7 +218,7 @@ export default function Inquiry() {
                 )
               )}
             </div>
-          </>
+          </div>
         )}
 
         {/* Navigation Buttons */}
