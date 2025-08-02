@@ -9,7 +9,7 @@ export default function Bio() {
         <Image src={BioPic} alt="Damian Padilla" />
       </div>
       <div className="basis-1/2 flex items-center justify-center flex-col gap-4 px-16">
-        <h1 className="text-4xl">Meet you videographer</h1>
+        <h1 className="text-4xl">Meet your videographer</h1>
         <p className="text-lg">
           My name is Damian Padilla and my journey in wedding videography began
           with a deep-seated passion for storytelling. I believe that a wedding
