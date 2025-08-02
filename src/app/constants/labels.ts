@@ -19,6 +19,7 @@ const LABELS = {
     testimonial1: {
       name: "Brittni G",
       title: "Talented & Kind",
+      videoID: "1106683143",
       review:
         "Parallax Films was a joy to work with for our wedding video. They were easy to contact, easygoing, and respectful throughout the entire process. Damian has a keen eye for detail and paid close attention to the lighting, resulting in a unique and beautifully compiled video. He captured all the special moments, including drone footage, behind-the-scenes details, and a social media clip that helped tell the story of our wedding day. We highly recommend Parallax Films to any couple looking for a talented videographer for their big day.",
     },
