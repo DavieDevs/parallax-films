@@ -1,5 +1,3 @@
-import test from "node:test";
-
 const LABELS = {
   intro: {
     title: "Capturing the Moments That Make Your Day Unforgettable",
@@ -56,6 +54,16 @@ const LABELS = {
       review:
         "We gave our vision of a documentary style Highlight Video Drone Service and received so much more than that!! We got our video on time and brought us to tears when we watched it! Couldn’t believe he was able to capture our venue to make it look so dreamy and amazing. Guided us on how to pose, something that’s important to me. Definitely something we’ll look back when we’re old to relive the moment! So many beautiful candid shots of not only us but our dearest family!! Very professional and easy to work with. Thank you so much!! ",
     },
+  },
+  bio: {
+    title: "Meet Your Videographer",
+    paragraph1:
+      "My name is Damian Padilla and my journey in wedding videography began with a deep-seated passion for storytelling. I believe that a wedding is more than an event; it’s a narrative of love, commitment, and the beginning of a beautiful journey together.",
+    paragraph2:
+      "That’s why at Parallax Films, your love story is my priority. I work closely with you to understand your vision, your personalities, and your unique love story. This personalized approach allows me to create wedding films that are a true reflection of you as a couple, ensuring that your memories are preserved for a lifetime.",
+    paragraph3:
+      "I would be honored to be part of your journey, capturing the magic of your love story on film.",
+    button: "Let's Talk",
   },
 };
 
