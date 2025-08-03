@@ -5,6 +5,7 @@ import BrandedSpacer from "./components/BrandedSpacer";
 import FeatureFilmSection from "./components/FeatureFilmSection";
 import Bio from "./components/Bio";
 import Testimonial from "./components/Testimonial";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <FeatureFilmSection />
       <Bio />
       <Testimonial />
+      <Footer />
     </div>
   );
 }
