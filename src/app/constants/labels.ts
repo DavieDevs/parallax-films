@@ -1,3 +1,5 @@
+import test from "node:test";
+
 const LABELS = {
   intro: {
     title: "Capturing the Moments That Make Your Day Unforgettable",
@@ -24,12 +26,14 @@ const LABELS = {
     testimonial2: {
       name: "Mindy Nelson P.",
       title: "Wedding videography",
+      videoID: "1106836988",
       review:
         "I can’t thank Damian enough for how perfect our wedding video is, he crushed it! Every time we watch it, it brings tears to our eyes. It is EXACTLY what we wanted! Very good communication as well as execution & very affordable! He went above & beyond. Definitely recommend him as your videographer!",
     },
     testimonial3: {
       name: "Caitlyn H.",
       title: "Bride",
+      videoID: "1106837502",
       review:
         "Parallax Films was an amazing videography team to work with for our wedding. Their communication was great - they were reliable, adaptable, and so sweet throughout the entire process. The quality of their work was also amazing, with detailed and high-quality footage that captured all the special moments of our day. The videographer worked very well with our photographer and was always filming, ensuring we have beautiful memories to look back on. We couldn't be happier with Parallax Films and highly recommend them to any couple planning their wedding.",
     },
@@ -53,6 +57,13 @@ const LABELS = {
       videoID: "1004926917",
       review:
         "We gave our vision of a documentary style Highlight Video Drone Service and received so much more than that!! We got our video on time and brought us to tears when we watched it! Couldn’t believe he was able to capture our venue to make it look so dreamy and amazing. Guided us on how to pose, something that’s important to me. Definitely something we’ll look back when we’re old to relive the moment! So many beautiful candid shots of not only us but our dearest family!! Very professional and easy to work with. Thank you so much!! ",
+    },
+    testimonial7: {
+      name: "Rebekah M.",
+      title: "Would 100000% book again",
+      videoID: "1106835839",
+      review:
+        "Parallax Films was the perfect choice for our wedding videography. From the moment I booked Damian, just 2 weeks before the wedding, he was incredibly thorough, reliable, and thoughtful in his communication. On the day of, he worked seamlessly alongside our photographers to capture all the special moments we wanted to remember. The final video Damian delivered was absolutely beautiful - creative, warm, and full of the love and joy of our wedding day. We are so grateful to have such a special keepsake that truly captures the essence of our celebration. Parallax Films' high-quality work and attention to detail made them an invaluable part of our wedding team.",
     },
   },
   bio: {
