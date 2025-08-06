@@ -1,10 +1,10 @@
 import { VimeoVideo } from "@/types/vimeo";
 
-export async function fetchVimeoVideo() {
-  const SHOWCASE_ID = "11813757";
+export async function fetchVimeoVideosByShowcase(showcaseId: string) {
+  // const SHOWCASE_ID = "11813757";
 
   const response = await fetch(
-    `https://api.vimeo.com/albums/${SHOWCASE_ID}/videos?sort=manual`,
+    `https://api.vimeo.com/albums/${showcaseId}/videos?sort=manual`,
     {
       headers: {
         Authorization: `Bearer ${process.env.VIMEO_ACCESS_TOKEN}`,
@@ -23,13 +23,15 @@ export async function fetchVimeoVideo() {
 
   return data.data.map((video: VimeoVideo) => {
     const id = video.uri.split("/").pop();
+    const sizes = video.pictures?.sizes || [];
+    const highResThumbnail = sizes[sizes.length - 1]?.link;
 
     return {
       id,
       title: video.name,
       description: video.description,
       tags: video.tags.map((t) => t.tag),
-      thumbnail: video.pictures?.sizes?.[2]?.link,
+      thumbnail: highResThumbnail,
       videoUrl: video.files?.[0]?.link,
     };
   });

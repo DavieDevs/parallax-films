@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       <div className="relative w-full h-screen flex items-center justify-center">
-        <Navigation />
+        <Navigation absolute />
         <Header />
       </div>
       <Intro />
