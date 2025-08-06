@@ -1,26 +1,32 @@
 "use client";
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Button from "../components/Button";
 import LABELS from "../constants/labels";
-import { Video } from "@/types/video";
+// import { Video } from "@/types/video";
+import Link from "next/link";
+
+import { useVimeoVideos } from "@/hooks/useVimeoVideos";
 
 export default function FeatureFilmSection() {
-  const [videos, setVideos] = useState<Video[]>([]);
+  const { videos, loading, error } = useVimeoVideos("11813757");
 
-  useEffect(() => {
-    const getVideos = async () => {
-      try {
-        const res = await fetch("/api/videos");
-        const { videos } = await res.json();
-        setVideos(videos);
-      } catch (error) {
-        console.error("Error loading videos:", error);
-      }
-    };
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
-    getVideos();
-  }, []);
+  // useEffect(() => {
+  //   const getVideos = async () => {
+  //     try {
+  //       const res = await fetch("/api/videos?showcaseId=11813757");
+  //       const { videos } = await res.json();
+  //       setVideos(videos);
+  //     } catch (error) {
+  //       console.error("Error loading videos:", error);
+  //     }
+  //   };
+
+  //   getVideos();
+  // }, []);
 
   return (
     <div className="bg-sand w-full flex flex-col justify-center items-center">
@@ -68,7 +74,9 @@ export default function FeatureFilmSection() {
         ))}
       </div>
       <div className="p-4">
-        <Button className="bg-mosswood ">View More</Button>
+        <Link href="/portfolio">
+          <Button className="bg-mosswood ">View More</Button>
+        </Link>
       </div>
     </div>
   );

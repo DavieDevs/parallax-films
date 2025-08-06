@@ -5,7 +5,7 @@ import Inquiry from "../components/Inquiry";
 export default function Contact() {
   return (
     <div className="bg-mosswood min-h-screen flex flex-col items-center">
-      <Navigation />
+      <Navigation absolute={false} />
 
       <main className="w-full pt-40 px-4">
         <Inquiry />
