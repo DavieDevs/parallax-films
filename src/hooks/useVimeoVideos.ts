@@ -16,10 +16,12 @@ export function useVimeoVideos(showcaseId: string) {
           throw new Error(text);
         }
 
-        const { videos } = await res.json();
+        const { videos } = (await res.json()) as { videos: Video[] }; // typed JSON
         setVideos(videos);
-      } catch (err: any) {
-        setError(err.message || "Failed to load videos");
+      } catch (err) {
+        // <- no ": any"
+        const message = (err as Error)?.message ?? "Failed to load videos";
+        setError(message);
         console.error("Error loading videos:", err);
       } finally {
         setLoading(false);

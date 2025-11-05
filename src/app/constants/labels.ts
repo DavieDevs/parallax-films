@@ -1,5 +1,3 @@
-import test from "node:test";
-
 const LABELS = {
   intro: {
     title: "Capturing the Moments That Make Your Day Unforgettable",

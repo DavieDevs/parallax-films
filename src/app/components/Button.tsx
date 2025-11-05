@@ -1,5 +1,3 @@
-import LABELS from "../constants/labels";
-
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: "mosswood" | "sand" | "primary" | "secondary" | "accent";
   className?: string;
