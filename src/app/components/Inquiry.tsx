@@ -36,7 +36,6 @@ export default function Inquiry() {
   const [formData, setFormData] = useState<InquiryForm>(initialForm);
   const [submitting, setSubmitting] = useState(false);
 
-  // 👇 submit only when this is true (set by the Submit button)
   const submitIntentRef = useRef(false);
 
   const handleInputChange: React.ChangeEventHandler<
@@ -59,7 +58,6 @@ export default function Inquiry() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // ⛔️ Ignore implicit submits (Enter carry-over, etc.)
     if (!submitIntentRef.current) return;
     submitIntentRef.current = false;
 
@@ -108,7 +106,6 @@ export default function Inquiry() {
       <form
         className="w-full max-w-md flex flex-col items-center min-h-[500px]"
         onSubmit={handleSubmit}
-        // Optional: block Enter unless you're actually on the submit button
         onKeyDown={(e) => {
           if (e.key === "Enter") {
             const el = e.target as HTMLElement;
