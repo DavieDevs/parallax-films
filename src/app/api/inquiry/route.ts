@@ -32,7 +32,7 @@ export async function POST(req: Request) {
     // For testing (no domain verification needed):
     const { error } = await resend.emails.send({
       from: "New Inquiry <onboarding@resend.dev>",
-      to: ["parallaxfilmsdfw@gmail.com"], // your inbox
+      to: [process.env.CONTACT_TO!],
       replyTo: email,
       subject: `New Inquiry from ${name}`,
       html: `
