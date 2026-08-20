@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <video
-        src="/parallaxclips.mp4"
+        src="/Parallax_Films_Website.mov"
         autoPlay
         muted
         playsInline
