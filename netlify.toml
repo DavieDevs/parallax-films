@@ -1,0 +1,5 @@
+[build.environment]
+  # Next.js/Turbopack cache stores literal env var values for build caching.
+  # This directory is not deployed (build-only), so exclude it from secrets
+  # scanning instead of disabling scanning entirely.
+  SECRETS_SCAN_OMIT_PATHS = ".netlify/.next/cache"
